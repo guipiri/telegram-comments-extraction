@@ -1,0 +1,20 @@
+Para instalar as dependências do projeto (caso seja a primeira vez rodando o script na sua máquina)
+
+1º Cole os seguintes arquivos em uma pasta:
+    a. credentials.json
+    b. package.json
+    c. package-lock.json
+    d. googleAuth.js
+    e. index.js
+    f. instructions.txt
+
+2º Com o node instalado em sua máquina, abra o terminal no diretório onde colou os arquivos
+3º Rode no terminal 'npm install'. Confira se uma pasta chamada node_modules foi criada no seu diretório raiz.
+
+Para fazer a extração
+
+1º Extraia os comentários do bot do telegram do dia desejado
+2º Cole na raiz do projeto apenas os arquivos html que vem nessa extração (ex.: messages.html, messages2.html)
+3º Apague todos os dados da aba 'extracitionComments' da seguinte planilha (https://docs.google.com/spreadsheets/d/1Ka0iTsErr8HUwHHnDpwNA9HBlvAY-kZcNrK2ffxKgxs/edit#gid=2137587853)
+4º Com o terminal aberto na raiz do projeto rode 'node index.js' e veja a mágica acontecer
+5º Beijos!
