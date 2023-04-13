@@ -3,9 +3,9 @@ const getAuthSheets = require("./googleAuth");
 
 const dir = fs.readdirSync("./");
 let html;
-let values = [[]];
+let values = [[], []];
 
-for (let i = 1; i < dir.length - 5; i++) {
+for (let i = 1; i < dir.length - 8; i++) {
 	if (i == 1) {
 		html = fs.readFileSync("./messages.html", "utf-8");
 	} else {
@@ -17,6 +17,20 @@ for (let i = 1; i < dir.length - 5; i++) {
 	htmlArray.forEach((linha, index) => {
 		if (linha.includes('       <div class="text">')) {
 			values[0].push(htmlArray[index + 1].split(" has commented")[0]);
+			if (
+				htmlArray[index + 1]
+					.split("<br><br>")[1]
+					.includes("ShowHashtag(")
+			) {
+				values[1].push(
+					htmlArray[index + 1]
+						.split("<br><br>")[1]
+						.split("</a>")[0]
+						.split(">")[1]
+				);
+			} else {
+				values[1].push(htmlArray[index + 1].split("<br><br>")[1]);
+			}
 		}
 	});
 }
